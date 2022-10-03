@@ -25,10 +25,8 @@ let{view}=require('./view/view');
 // view(app);
 // socket_io(io,catalogue,con);
 app.get('/',(req,res)=>{
-    res.json({
-        hello:"hi",
-    })
-})
+    res.sendFile(path.join(__dirname, './index.html'));
+});
 
 
 
