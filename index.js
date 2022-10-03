@@ -4,9 +4,14 @@ let{express,app,http}=require('./require/require');
 // var app = express();
 const path =require('path');
 // let http = require('http').Server(app);
-// require('dotenv').config()
-// const mysql = require('mysql2')
-// const con= mysql.createConnection(process.env.DATABASE_URL);
+require('dotenv').config()
+const mysql = require('mysql2')
+const con= mysql.createConnection(process.env.DATABASE_URL);
+
+con.query(`SELECT * FROM livres `, function (err, result, fields) {
+    let products=JSON.parse(JSON.stringify(result));
+    console.log(result);
+})
 
 
 // let dotenv=require('dotenv').config()
