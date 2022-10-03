@@ -67,13 +67,13 @@ app.set('views', path.join(__dirname, '/views'))
 //   // res.sendFile('index');
 // });
 app.get('/',(req,res)=>{
-    con.query(`SELECT * FROM livres `, function (err, result, fields) {
-      let products=JSON.parse(JSON.stringify(result));
-      console.log(result);
+    // con.query(`SELECT * FROM livres `, function (err, result, fields) {
+    //   let products=JSON.parse(JSON.stringify(result));
+    //   console.log(result);
       res.render('index', {
       });
   
-    })
+    // })
     
     
 });
