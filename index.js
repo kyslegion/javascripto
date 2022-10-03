@@ -18,10 +18,6 @@ let{socket_io}=require('./Socket.io/serveur/serveur');
 
 // let http = require('http').Server(app);
 let x =__dirname;
-require('dotenv').config()
-let dotenv=require('dotenv').config()
-const mysql = require('mysql2')
-const con= mysql.createConnection(process.env.DATABASE_URL)
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, './views'))
 
