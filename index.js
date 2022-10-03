@@ -24,7 +24,11 @@ let{view}=require('./view/view');
 // routes(app,express,x,path);
 // view(app);
 // socket_io(io,catalogue,con);
-
+app.get('/',(req,res)=>{
+    res.json({
+        hello:"hi",
+    })
+})
 
 
 
