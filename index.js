@@ -66,16 +66,17 @@ app.set('views', path.join(__dirname, '/views'))
 //   res.render('index');
 //   // res.sendFile('index');
 // });
+app.get('/ejs', function(req, res) {
+    res.render('index');
+    // res.sendFile('index');
+});
 app.get('/',(req,res)=>{
     // con.query(`SELECT * FROM livres `, function (err, result, fields) {
     //   let products=JSON.parse(JSON.stringify(result));
     //   console.log(result);
-      res.render('index', {
-      });
+      res.render('index');
   
     // })
-    
-    
 });
 // app.listen('3000',()=>{
 //     console.log("Serveur 3000");
