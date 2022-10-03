@@ -54,7 +54,8 @@ app.set('views', path.join(__dirname, '/views'))
 //   res.render('index.ejs');
 // });
 app.get('/',(req,res)=>{
-  res.sendFile(path.join(__dirname, './connexion.html'));
+//   res.sendFile(path.join(__dirname, './connexion.html'));
+res.render('index');
   // res.render('views/index.ejs');
 });
 // about page
