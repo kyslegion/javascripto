@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 // view(app);
 // socket_io(io,catalogue,con);
 app.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname, './index.html'));
+    res.sendFile(path.join(__dirname,'index.html'));
 });
 
 
