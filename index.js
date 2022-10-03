@@ -1,5 +1,6 @@
 
-var express = require('express');
+let{express}=require('./require/require');
+// var express = require('express');
 var app = express();
 const path =require('path');
 let http = require('http').Server(app);
@@ -9,7 +10,7 @@ let port=4000;
 //   console.log(port);
 // });
 
-// let{express,app,path,http}=require('./require/require');
+
 http.listen(port,()=>{
     console.log(port);
   });
