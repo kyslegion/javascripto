@@ -1,7 +1,7 @@
 
-let{express}=require('./require/require');
+let{express,app}=require('./require/require');
 // var express = require('express');
-var app = express();
+// var app = express();
 const path =require('path');
 let http = require('http').Server(app);
 
