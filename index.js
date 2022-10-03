@@ -20,7 +20,9 @@ let{view}=require('./view/view');
 
 // app.set('view engine', 'ejs')
 // app.set('views', path.join(__dirname, './views'))
-
+app.use(express.static(__dirname+ '/'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: false }));
 // routes(app,express,x,path);
 // view(app);
 // socket_io(io,catalogue,con);
