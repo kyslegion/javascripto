@@ -53,11 +53,20 @@ app.set('views', path.join(__dirname, '/views'))
 // app.get('/', function(req, res) {
 //   res.render('index.ejs');
 // });
+// app.get('/',(req,res)=>{
+// //   res.sendFile(path.join(__dirname, './connexion.html'));
+//   res.render('./index');
+//   // res.render('views/index.ejs');
+// });
 app.get('/',(req,res)=>{
-//   res.sendFile(path.join(__dirname, './connexion.html'));
-res.render('./index');
-  // res.render('views/index.ejs');
+    res.sendFile(path.join(__dirname, './connexion.html'));
+    // res.render('views/index.ejs');
 });
+app.get('/ejs', function(req, res) {
+    res.render('index');
+    // res.sendFile('index');
+});
+  
 // about page
 // app.get('/catalogue', function(req, res) {
 //   // res.render('views/catalogue.ejs');
