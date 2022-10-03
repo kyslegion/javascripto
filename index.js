@@ -4,14 +4,14 @@ let{express,app,http}=require('./require/require');
 // var app = express();
 const path =require('path');
 // let http = require('http').Server(app);
-require('dotenv').config()
-const mysql = require('mysql2')
-const con= mysql.createConnection(process.env.DATABASE_URL);
+// require('dotenv').config()
+// const mysql = require('mysql2')
+// const con= mysql.createConnection(process.env.DATABASE_URL);
 
-con.query(`SELECT * FROM livres `, function (err, result, fields) {
-    let products=JSON.parse(JSON.stringify(result));
-    console.log(result);
-})
+// con.query(`SELECT * FROM livres `, function (err, result, fields) {
+//     let products=JSON.parse(JSON.stringify(result));
+//     console.log(result);
+// })
 
 
 // let dotenv=require('dotenv').config()
@@ -53,10 +53,10 @@ app.set('views', path.join(__dirname, '/views'))
 // app.get('/', function(req, res) {
 //   res.render('index.ejs');
 // });
-app.get('/',(req,res)=>{
-  res.sendFile(path.join(__dirname, './connexion.html'));
-  // res.render('views/index.ejs');
-});
+// app.get('/',(req,res)=>{
+//   res.sendFile(path.join(__dirname, './connexion.html'));
+//   // res.render('views/index.ejs');
+// });
 // about page
 // app.get('/catalogue', function(req, res) {
 //   // res.render('views/catalogue.ejs');
@@ -66,17 +66,17 @@ app.get('/',(req,res)=>{
 //   res.render('index');
 //   // res.sendFile('index');
 // });
-// app.get('/',(req,res)=>{
-//     con.query(`SELECT * FROM livres `, function (err, result, fields) {
-//       // let products=JSON.parse(JSON.stringify(result));
-//       // console.log(result);
-//       res.render('index.ejs', {
-//       });
+app.get('/',(req,res)=>{
+    con.query(`SELECT * FROM livres `, function (err, result, fields) {
+      let products=JSON.parse(JSON.stringify(result));
+      console.log(result);
+      res.render('index', {
+      });
   
-//     })
+    })
     
     
-// });
+});
 // app.listen('3000',()=>{
 //     console.log("Serveur 3000");
 // })
