@@ -1,12 +1,25 @@
 
-var express = require('express');
-var app = express();
-const path =require('path');
+// var express = require('express');
+// var app = express();
+// const path =require('path');
 
 let port=4000;
-app.listen(port,()=>{
-  console.log(port);
-});
+// app.listen(port,()=>{
+//   console.log(port);
+// });
+
+let{express,app,path,http}=require('./require/require');
+http.listen(port,()=>{
+    console.log(port);
+  });
+// let{view}=require('./view/view');
+// let{routes}=require('./route/route');
+// let{catalogue}=require('./script/catalogue');
+// let{socket_io}=require('./Socket.io/serveur/serveur');
+
+// routes(app,express,x,path);
+// view(app,con);
+// socket_io(io,catalogue,con);
 
 // app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.urlencoded({ extended: false }));
