@@ -12,7 +12,7 @@ let x =__dirname;
 // let path =require('path');
 
 let{express,app,path,http,io}=require('./require/require');
-let{view}=require('./view/view');
+// let{view}=require('./view/view');
 // let{routes}=require('./route/route');
 // let{catalogue}=require('./script/catalogue');
 // let{socket_io}=require('./Socket.io/serveur/serveur');
