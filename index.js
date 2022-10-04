@@ -58,10 +58,10 @@ app.set('views', path.join(__dirname, '/views'))
 //   res.render('./index');
 //   // res.render('views/index.ejs');
 // });
-app.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname, './connexion.html'));
-    // res.render('views/index.ejs');
-});
+// app.get('/',(req,res)=>{
+//     res.sendFile(path.join(__dirname, './connexion.html'));
+//     // res.render('views/index.ejs');
+// });
 app.get('/ejs', function(req, res) {
     res.render('index');
     // res.sendFile('index');
