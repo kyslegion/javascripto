@@ -23,9 +23,7 @@ let port=4000;
 // });
 
 
-http.listen(port,()=>{
-    console.log(port);
-  });
+
 // let{view}=require('./view/view');
 // let{routes}=require('./route/route');
 // let{catalogue}=require('./script/catalogue');
@@ -64,8 +62,7 @@ app.set('views', path.join(__dirname+ '/views'))
 //     // res.render('views/index.ejs');
 // });
 app.get('/', function(req, res) {
-    res.render('/index');
-    // res.sendFile('index');
+    res.render('index');
 });
   
 // about page
@@ -91,4 +88,7 @@ app.get('/', function(req, res) {
 // app.listen('3000',()=>{
 //     console.log("Serveur 3000");
 // })
-// module.exports=app
+http.listen(port,()=>{
+    console.log(port);
+  });
+module.exports=app
