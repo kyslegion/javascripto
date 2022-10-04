@@ -64,7 +64,7 @@ app.set('views', path.join(__dirname+ '/views'))
 //     // res.render('views/index.ejs');
 // });
 app.get('/', function(req, res) {
-    res.render('index');
+    res.render('/index');
     // res.sendFile('index');
 });
   
