@@ -10,16 +10,13 @@ let http = require('http').Server(app);
 let port=4000;
 const path =require('path');
 http.listen(port,()=>{
+    console.log(port);
 });
-// let http = require('http').Server(app);
-// require('dotenv').config()
-// const mysql = require('mysql2')
-// const con= mysql.createConnection(process.env.DATABASE_URL);
+require('dotenv').config()
+const mysql = require('mysql2')
+const con= mysql.createConnection(process.env.DATABASE_URL);
 
-// con.query(`SELECT * FROM livres `, function (err, result, fields) {
-//     let products=JSON.parse(JSON.stringify(result));
-//     console.log(result);
-// })
+
 
 
 // let dotenv=require('dotenv').config()
@@ -44,6 +41,8 @@ http.listen(port,()=>{
 // app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname+ '/'));
+app.use(express.static(__dirname));
+app.use(express.static('/'));
 app.use(express.static(__dirname+ '/style/background/'));
 // app.use(express.static(__dirname+ '/views'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -69,7 +68,14 @@ app.set('views', path.join(__dirname, '/views'))
 //     // res.render('views/index.ejs');
 // });
 app.get('/', function(req, res) {
-    res.render('index');
+    con.query(`SELECT * FROM livres `, function (err, result, fields) {
+        let products=JSON.parse(JSON.stringify(result));
+        console.log(result);
+        res.render('index',{
+            products:products
+        });
+    })
+    
 });
   
 // about page
