@@ -5,7 +5,6 @@ let{express,app,http}=require('./require/require');
 let port=4000;
 const path =require('path');
 http.listen(port,()=>{
-    console.log(port);
 });
 // let http = require('http').Server(app);
 // require('dotenv').config()
