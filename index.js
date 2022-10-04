@@ -46,6 +46,7 @@ app.use(express.urlencoded({ extended: false }));
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'))
+app.set('views', path.join(__dirname+ '/views'))
 // use res.render to load up an ejs view file
 //l
 
@@ -62,7 +63,7 @@ app.set('views', path.join(__dirname, '/views'))
 //     res.sendFile(path.join(__dirname, './connexion.html'));
 //     // res.render('views/index.ejs');
 // });
-app.get('/ejs', function(req, res) {
+app.get('/', function(req, res) {
     res.render('index');
     // res.sendFile('index');
 });
