@@ -2,7 +2,11 @@
 let{express,app,http}=require('./require/require');
 // var express = require('express');
 // var app = express();
+let port=4000;
 const path =require('path');
+http.listen(port,()=>{
+    console.log(port);
+});
 // let http = require('http').Server(app);
 // require('dotenv').config()
 // const mysql = require('mysql2')
@@ -17,7 +21,7 @@ const path =require('path');
 // let dotenv=require('dotenv').config()
 // const mysql = require('mysql2')
 
-let port=4000;
+
 // app.listen(port,()=>{
 //   console.log(port);
 // });
@@ -44,7 +48,6 @@ app.use(express.urlencoded({ extended: false }));
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'))
-app.set('views', path.join(__dirname+ '/views'))
 // use res.render to load up an ejs view file
 //l
 
@@ -88,7 +91,3 @@ app.get('/', function(req, res) {
 // app.listen('3000',()=>{
 //     console.log("Serveur 3000");
 // })
-http.listen(port,()=>{
-    console.log(port);
-  });
-module.exports=app
